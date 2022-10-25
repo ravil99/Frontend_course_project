@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
 </script>
@@ -18,14 +17,10 @@
 			</picture>
 		</span>
 
-		to your new<br />SvelteKit app
+		Use power of AI<br />for text or images! <br />
 	</h1>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	<h1>! Description will be updated !</h1>
 </section>
 
 <style>
