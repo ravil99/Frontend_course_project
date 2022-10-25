@@ -37,7 +37,8 @@
             </li>
         </ul>
     </div>
-    
+
+<!-- Can be resolved by changing EsLint configurations-->
     <div class="nav__toggle" id="nav-toggle" 
         on:click="{() => menu = !menu}">
         <i class='bx bx-grid-alt' ></i>
@@ -49,9 +50,9 @@
 
     .nav__menu{
         position: fixed;
-        bottom: -100%;
-        left: 0;
-        width: 100%;
+        bottom: 100%;
+        left: 80%;
+        width: 20%;
         padding: 2rem 1.5rem;
         background-color: var(--body-color);
         box-shadow: 0 1px 4px rgba(0,0,0,.1);
@@ -72,15 +73,15 @@
 	}
 
 	.bd-container{
-    max-width: 968px;
+    max-width: 3rem;
     width: calc(100% - 3rem);
     margin-left: var(--mb-3);
     margin-right: var(--mb-3);
 	}
 
 	.nav__list{
-	    display: grid;
-	    grid-template-columns: repeat(3, 1fr);
+	    display: flex;
+        flex-direction: column;
 	    gap: 2 rem;
 	}
 
@@ -105,6 +106,8 @@
 	}
 
 	.nav__toggle{
+    width: 0;
+    height: 0;
     color: var(--title-color);
     font-weight: var(--font-medium);
 	font-size: 1.2rem;

@@ -14,20 +14,28 @@
 	</div>
 
 
+	<div class="proj__name">
+		<p class = "name__data">
+			MindHelp
+		</p>
+	</div>
+
 	<!-- Improve visual by adding styles -->
 	<!-- Maybe - add borders -->
 
 	<!-- Add Props and/or Events -->
-    <NavMenu />
-
-	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
-	</div>
+	<NavMenu />
+	
 </header>
 
 <style>
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		
+	}
+
 	.corner {
 		width: 3em;
 		height: 3em;
@@ -47,12 +55,8 @@
 		object-fit: contain;
 	}
 
-	header {
-		display: flex;
-		justify-content: space-between;
-	}
-
 	a:hover {
 		color: var(--color-theme-1);
 	}
+
 </style>
