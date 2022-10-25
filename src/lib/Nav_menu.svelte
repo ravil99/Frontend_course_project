@@ -1,116 +1,119 @@
 <script lang="ts">
-    let menu: boolean = false;
-
+	// import { page } from '$app/stores';
+	let menu: boolean = false;
 </script>
 
 <!-- Navigation element -->
 <nav class="nav bd-container">
-        
-    <div class="{menu === true ? 'nav__menu show-menu' : 'nav__menu'}" 
-         id="nav-menu">
+	<div class={menu === true ? 'nav__menu show-menu' : 'nav__menu'}>
+		<!-- Can be changed to #each loop nav__link element-->
 
-        <!-- Can be changed to #each loop nav__link element-->
+		<ul class="nav__list">
+			<!-- Home-->
+			<li class="nav__item">
+				<a href="/" class="nav__link active-link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-home-alt-2 nav___icon" />Home
+				</a>
+			</li>
 
-        <ul class="nav__list">
-            <!-- Home-->
-            <li class="nav__item">
-                <a href="#home" class="nav__link active-link"
-                    on:click="{() => menu = !menu}">
-                    <i class='bx bx-home-alt-2 nav___icon' ></i>Home
-                </a>
-            </li>
+			<!-- Text analysis-->
+			<li class="nav__item">
+				<a href="/text" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-text" />Text analysis
+				</a>
+			</li>
 
-            <!-- Profile-->
-            <li class="nav__item">
-                <a href="#profile" class="nav__link"
-                    on:click="{() => menu = !menu}">
-                    <i class='bx bx-user-circle nav___icon' ></i>Profile
-                </a>
-            </li>
+			<!-- Question answerer-->
+			<li class="nav__item">
+				<a href="/question" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-question-mark" />Question answerer
+				</a>
+			</li>
 
-            <!-- Hobbies-->
-            <li class="nav__item">
-                <a href="#hobbies" class="nav__link"
-                    on:click="{() => menu = !menu}">
-                    <i class='bx bx-wink-smile'></i>Hobbies
-                </a>
-            </li>
-        </ul>
-    </div>
+			<!-- Aigerim 1-->
+			<li class="nav__item">
+				<a href="/A_1" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-wink-smile" />Aigerim 1
+				</a>
+			</li>
 
-<!-- Can be resolved by changing EsLint configurations-->
-    <div class="nav__toggle" id="nav-toggle" 
-        on:click="{() => menu = !menu}">
-        <i class='bx bx-grid-alt' ></i>
-    </div>
+			<!-- Aigerim 2-->
+			<li class="nav__item">
+				<a href="A_1" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-wink-smile" />Aigerim 2
+				</a>
+			</li>
+		</ul>
+	</div>
 
+	<!-- Can be resolved by changing EsLint configurations-->
+	<div class="nav__toggle" on:click={() => (menu = !menu)}>
+		<i class="bx bx-grid-alt" />
+	</div>
 </nav>
 
 <style>
-
-    .nav__menu{
-        position: fixed;
-        bottom: 100%;
-        left: 80%;
-        width: 20%;
-        padding: 2rem 1.5rem;
-        background-color: var(--body-color);
-        box-shadow: 0 1px 4px rgba(0,0,0,.1);
-        border-radius: 1rem 1rem 0 0;
-        z-index: var(--z-fixed);
-        transition: .3s;
-    }
-
-	.show-menu{
-    bottom: var(--header-height);
+	.nav__menu {
+		position: fixed;
+		top: -100%;
+		left: 80%;
+		width: 20%;
+		padding: 2rem 1.5rem;
+		background-color: var(--body-color);
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+		border-radius: 1rem 1rem 0 0;
+		z-index: var(--z-fixed);
+		transition: 0.3s;
 	}
 
-	.nav{
-	    height: var(--header-height);
-	    display: flex;
-	    justify-content: space-between;
-	    align-items: center;
+	.show-menu {
+		top: var(--header-height);
 	}
 
-	.bd-container{
-    max-width: 3rem;
-    width: calc(100% - 3rem);
-    margin-left: var(--mb-3);
-    margin-right: var(--mb-3);
+	.nav {
+		height: var(--header-height);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
-	.nav__list{
-	    display: flex;
-        flex-direction: column;
-	    gap: 2 rem;
+	.bd-container {
+		max-width: 3rem;
+		width: calc(100% - 3rem);
+		margin-left: var(--mb-1);
+		margin-right: var(--mb-1);
 	}
 
-	.nav__item{
-    text-align: center;
+	.nav__list {
+		display: flex;
+		flex-direction: column;
+		gap: 2 rem;
 	}
 
-	.nav__link{
-    display: flex;
-    flex-direction: column;
-    font-size: var(--smaller-font-size);
-    color: var(--text-color-light);
-    font-weight: var(--font-medium);
+	.nav__item {
+		text-align: center;
 	}
 
-	.nav__link:hover{
-	    color: var(--title-color)
+	.nav__link {
+		display: flex;
+		flex-direction: column;
+		font-size: var(--smaller-font-size);
+		color: var(--text-color-light);
 	}
 
-	.active-link{
-    color: var(--title-color);
+	.nav__link:hover {
+		color: var(--title-color);
 	}
 
-	.nav__toggle{
-    width: 0;
-    height: 0;
-    color: var(--title-color);
-    font-weight: var(--font-medium);
-	font-size: 1.2rem;
-    cursor: pointer;
-}
+	.active-link {
+		color: var(--title-color);
+	}
+
+	.nav__toggle {
+		width: 0;
+		height: 0;
+		color: var(--title-color);
+		font-size: 1.2rem;
+		cursor: pointer;
+	}
 </style>

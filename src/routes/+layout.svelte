@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Header from './Header.svelte';
 	import './styles.css';
+	import Header from './Header.svelte';
 	import github from '$lib/images/github.svg';
 </script>
 
@@ -12,14 +12,13 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p class="adress">Adress</p>
 
 		<div class="corner">
-			<a href="https://github.com/sveltejs/kit">
+			<a href="https://github.com/ravil99/Frontend_course_project">
 				<img src={github} alt="GitHub" />
 			</a>
 		</div>
-
 	</footer>
 </div>
 
@@ -49,6 +48,10 @@
 		object-fit: contain;
 	}
 
+	.adress {
+		font-size: var(--h2-font-size);
+	}
+
 	main {
 		flex: 1;
 		display: flex;
@@ -62,8 +65,7 @@
 
 	footer {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		padding: 12px;
 	}

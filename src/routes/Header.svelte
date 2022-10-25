@@ -1,9 +1,6 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
 	import NavMenu from '$lib/Nav_menu.svelte';
-
 </script>
 
 <header>
@@ -13,27 +10,20 @@
 		</a>
 	</div>
 
-
 	<div class="proj__name">
-		<p class = "name__data">
-			MindHelp
-		</p>
+		<p class="name__data">MindHelp</p>
 	</div>
 
 	<!-- Improve visual by adding styles -->
-	<!-- Maybe - add borders -->
 
 	<!-- Add Props and/or Events -->
 	<NavMenu />
-	
 </header>
 
 <style>
-
 	header {
 		display: flex;
 		justify-content: space-between;
-		
 	}
 
 	.corner {
@@ -59,4 +49,11 @@
 		color: var(--color-theme-1);
 	}
 
+	.proj__name {
+		font: var(--font-mono);
+	}
+
+	.name__data {
+		font-size: var(--h1-font-size);
+	}
 </style>
