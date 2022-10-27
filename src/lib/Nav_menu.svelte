@@ -18,14 +18,14 @@
 
 			<!-- Text analysis-->
 			<li class="nav__item">
-				<a href="/text" class="nav__link" on:click={() => (menu = !menu)}>
+				<a href="/text_analysis" class="nav__link" on:click={() => (menu = !menu)}>
 					<i class="bx bx-text" />Text analysis
 				</a>
 			</li>
 
 			<!-- Question answerer-->
 			<li class="nav__item">
-				<a href="/question" class="nav__link" on:click={() => (menu = !menu)}>
+				<a href="/question_answerer" class="nav__link" on:click={() => (menu = !menu)}>
 					<i class="bx bx-question-mark" />Question answerer
 				</a>
 			</li>
