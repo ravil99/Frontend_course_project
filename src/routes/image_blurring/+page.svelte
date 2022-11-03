@@ -1,52 +1,76 @@
 <script lang="ts">
+
+	import type { PageData } from './$types';
+	export let data: PageData;
+
 	let dropped : string | null
 	let fileinput : HTMLInputElement;
+	let result: string;
+
 	const onFileSelected =(e: Event)=>{
-	let target = e.target as HTMLInputElement
-	let file: File = (target.files as FileList)[0];
-			let reader = new FileReader();
-			reader.readAsDataURL(file);
-			reader.onload = e => {
-				let targ = e.target as FileReader
-				dropped = (targ.result as string);
-			};
+		let target = e.target as HTMLInputElement
+		let file: File = (target.files as FileList)[0];
+		let reader = new FileReader();
+
+		reader.readAsDataURL(file);
+		reader.onload = e => {
+			let targ = e.target as FileReader
+			dropped = (targ.result as string);
+
+		};
 	}
+	
+	if(data.hasOwnProperty("response")){
+		const {response} = data;
+		if(response.hasOwnProperty("blurred")){
+			result = response.blurred;
+			console.log(result);
+		}else{
+			alert("Try again!");
+		}
+	}
+	
 </script>
 
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
-<h1>Image Blurring
-	<div class="conver">
-		<button>click to process</button>
-	</div>
-</h1>
+<form method="POST">
+	<h1>Image Blurring
+		<div class="conver">
+			<button>click to process</button>
+		</div>
+	</h1>
 	<div class="grid-containers-images">
 
 		<div class="upload" on:click={()=>{fileinput.click();}}>
 			{#if dropped}
-			<img class="dropped" src="{dropped}" alt="d" />
+				<img class="dropped" src="{dropped}" alt="d" />
 			{:else}
 				<div class="logo"> 
-					<img class="logo-image" src="https://static.thenounproject.com/png/625182-200.png" alt=""  />
+					<img class="proc-img" src="https://static.thenounproject.com/png/625182-200.png" alt=""  />
 				</div>
 				<div class="chan">Upload an image or drag it here</div>
 			{/if}
 		</div>
 		
 		<input style="display:none" type="file" accept=".jpg, .jpeg, .png" on:change={(e)=>onFileSelected(e)} bind:this={fileinput} >
+		
+		<input style="display:none" name="orgimg" value={dropped}>
 
 		<div class="result">
-			<!-- {#if result} -->
+			<!-- {#if blurred} -->
+				<img class="dropped" src={result} alt="wait or try again" />
+			<!-- {:else} -->
 				<div class="logo"> 
-					<img class="resul-img" src="" alt=""  />
 					Result
 				</div>
+			<!-- {/if} -->
 		</div>
 
 	</div>
-
+</form>
 
 
 <style>
@@ -99,7 +123,7 @@
 	width: 300px;
 }
 
-.logo-image{
+.proc-img{
 	height: 100px;
 	width: 100px;
 }

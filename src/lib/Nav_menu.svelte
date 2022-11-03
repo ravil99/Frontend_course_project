@@ -30,17 +30,23 @@
 				</a>
 			</li>
 
-			<!-- Aigerim 1-->
+			<!-- Image blurring-->
 			<li class="nav__item">
-				<a href="/A_1" class="nav__link" on:click={() => (menu = !menu)}>
-					<i class="bx bx-wink-smile" />Aigerim 1
+				<a href="/image_blurring" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-wink-smile" /> Image blurring
 				</a>
 			</li>
 
-			<!-- Aigerim 2-->
+			<!-- Image detection-->
 			<li class="nav__item">
-				<a href="A_1" class="nav__link" on:click={() => (menu = !menu)}>
-					<i class="bx bx-wink-smile" />Aigerim 2
+				<a href="/image_detection" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-wink-smile" />Image detection
+				</a>
+			</li>
+			<!-- Sverdle -->
+			<li class="nav__item">
+				<a href="/sverdle" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-wink-smile" />Sverdle
 				</a>
 			</li>
 		</ul>
