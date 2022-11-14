@@ -1,5 +1,6 @@
 <script lang="ts">
 	// import { page } from '$app/stores';
+	import { base } from '$app/paths';
 	let menu: boolean = false;
 </script>
 
@@ -11,38 +12,27 @@
 		<ul class="nav__list">
 			<!-- Home-->
 			<li class="nav__item">
-				<a href="/" class="nav__link active-link" on:click={() => (menu = !menu)}>
+				<a href="{base}/" class="nav__link active-link" on:click={() => (menu = !menu)}>
 					<i class="bx bx-home-alt-2 nav___icon" />Home
 				</a>
 			</li>
 
 			<!-- Text analysis-->
 			<li class="nav__item">
-				<a href="/text_analysis" class="nav__link" on:click={() => (menu = !menu)}>
+				<a href="{base}/text_analysis" class="nav__link" on:click={() => (menu = !menu)}>
 					<i class="bx bx-text" />Text analysis
 				</a>
 			</li>
 
 			<!-- Question answerer-->
 			<li class="nav__item">
-				<a href="/question_answerer" class="nav__link" on:click={() => (menu = !menu)}>
+				<a href="{base}/question_answerer" class="nav__link" on:click={() => (menu = !menu)}>
 					<i class="bx bx-question-mark" />Question answerer
 				</a>
 			</li>
 
-			<!-- Aigerim 1-->
-			<li class="nav__item">
-				<a href="/A_1" class="nav__link" on:click={() => (menu = !menu)}>
-					<i class="bx bx-wink-smile" />Aigerim 1
-				</a>
-			</li>
+			<!-- Aigerim's parts will be included, when they will be ready-->
 
-			<!-- Aigerim 2-->
-			<li class="nav__item">
-				<a href="A_1" class="nav__link" on:click={() => (menu = !menu)}>
-					<i class="bx bx-wink-smile" />Aigerim 2
-				</a>
-			</li>
 		</ul>
 	</div>
 
