@@ -1,7 +1,21 @@
 <script lang="ts">
+	import { getAuth, onAuthStateChanged, type User } from "firebase/auth";
+	import { onMount } from "svelte";
+	import { app } from "./firebase/client";
+
 	// import { page } from '$app/stores';
 	import { base } from '$app/paths';
 	let menu: boolean = false;
+	let user: User | null
+
+	onMount(async () => {
+		const auth = getAuth(app);
+		onAuthStateChanged(auth, (newUser) => {
+			// console.log(user);
+			user = newUser;
+		});
+	});
+	
 </script>
 
 <!-- Navigation element -->
@@ -11,6 +25,15 @@
 
 		<ul class="nav__list">
 			<!-- Home-->
+
+			{#if user}
+				<li class="nav__item">
+					<a href="/auth/confirmed" class="nav__link active-link" on:click={() => (menu = !menu)}>
+						<i class="bx bx-wink-smile" />{user.displayName}
+					</a>
+				</li>
+			{/if}
+
 			<li class="nav__item">
 				<a href="{base}/" class="nav__link active-link" on:click={() => (menu = !menu)}>
 					<i class="bx bx-home-alt-2 nav___icon" />Home
@@ -31,6 +54,25 @@
 				</a>
 			</li>
 
+			<!-- Image blurring-->
+			<li class="nav__item">
+				<a href="/image_blurring" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-wink-smile" /> Image blurring
+				</a>
+			</li>
+
+			<!-- Image detection-->
+			<li class="nav__item">
+				<a href="/image_detection" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-wink-smile" />Image detection
+				</a>
+			</li>
+			<!-- Sverdle -->
+			<li class="nav__item">
+				<a href="/sverdle" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-wink-smile" />Sverdle
+				</a>
+			</li>
 			<!-- Aigerim's parts will be included, when they will be ready-->
 
 		</ul>
