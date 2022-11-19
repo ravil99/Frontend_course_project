@@ -1,6 +1,7 @@
 <script lang="ts">
 	import logo from '$lib/images/svelte-logo.svg';
 	import NavMenu from '$lib/Nav_menu.svelte';
+	
 </script>
 
 <header>

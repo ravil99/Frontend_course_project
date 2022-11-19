@@ -1,8 +1,7 @@
 export const prerender = false;
 
-import { error } from '@sveltejs/kit';
+import {SECTRET_API_KEY} from '$env/static/private'
 import type { Actions, PageServerLoad} from './$types';
-import type { ActionResult } from '@sveltejs/kit';
 
 let result: any;
 
@@ -21,11 +20,11 @@ export const actions: Actions = {
       }
     }
 
-    const res = await fetch('https://api.pretrained.ai/aigerim/face-blurring', {
+    const res = await fetch('https://api.pretrained.ai/aigerim-1/face-blurring', {
       method: 'POST',
       body: JSON.stringify(bodyinit),
       headers: {
-        'Authorization': 'Bearer 448e39890c60474f04d6daa5a9de5652',
+        'Authorization': SECTRET_API_KEY,
         'Content-Type': 'application/json'
       }
     });

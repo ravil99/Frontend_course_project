@@ -1,5 +1,6 @@
 export const prerender = false;
 
+import {SECTRET_API_KEY} from '$env/static/private'
 import { error } from '@sveltejs/kit';
 import type { Actions, PageServerLoad} from './$types';
 import type { ActionResult } from '@sveltejs/kit';
@@ -21,11 +22,11 @@ export const actions: Actions = {
       }
     }
 
-    const res = await fetch('https://api.pretrained.ai/aigerim/face-detection', {
+    const res = await fetch('https://api.pretrained.ai/aigerim-1/face-detection', {
       method: 'POST',
       body: JSON.stringify(bodyinit),
       headers: {
-        'Authorization': 'Bearer 448e39890c60474f04d6daa5a9de5652',
+        'Authorization': SECTRET_API_KEY,
         'Content-Type': 'application/json'
       }
     });

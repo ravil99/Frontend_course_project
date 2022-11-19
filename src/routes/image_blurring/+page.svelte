@@ -7,7 +7,7 @@
 	let fileinput : HTMLInputElement;
 	let result: string;
 
-	const onFileSelected =(e: Event)=>{
+	const onFileSelected =(e: Event) => {
 		let target = e.target as HTMLInputElement
 		let file: File = (target.files as FileList)[0];
 		let reader = new FileReader();
@@ -19,15 +19,18 @@
 
 		};
 	}
-	
-	if(data.hasOwnProperty("response")){
-		const {response} = data;
-		if(response.hasOwnProperty("blurred")){
-			result = response.blurred;
-			console.log(result);
-		}else{
-			alert("Try again!");
+	try {
+		if(data.hasOwnProperty("response")) {
+			const {response} = data;
+			if(response.hasOwnProperty("blurred")) {
+				result = response.blurred;
+				console.log(result);
+			}else{
+				alert("Try again!");
+			}
 		}
+	} catch(err) {
+		console.log(err)
 	}
 	
 </script>

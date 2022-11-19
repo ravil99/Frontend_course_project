@@ -5,7 +5,12 @@
 
 	let dropped : string | null
 	let fileinput : HTMLInputElement;
-	let result: string;
+	let result: any;
+
+	// interface Eye{
+	// 	x : number,
+	// 	y : number,
+	// }
 
 	const onFileSelected =(e: Event)=>{
 		let target = e.target as HTMLInputElement
@@ -18,16 +23,19 @@
 			dropped = (targ.result as string);
 
 		};
-	}
-	
-	if(data.hasOwnProperty("response")){
-		const {response} = data;
-		if(response.hasOwnProperty("faces")){
-			result = response.faces;
-			console.log(result);
+	} 
+	let leftEye: any
+	try {
+		if(data.response.faces[0].hasOwnProperty("landmarks")){
+			const {landmarks} = data.response.faces[0];
+			console.log(landmarks);
+			result = landmarks
+			leftEye = result.leftEye
 		}else{
 			alert("Try again!");
 		}
+	} catch (err) {
+		console.log(err)
 	}
 	
 </script>
@@ -35,6 +43,8 @@
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	
 </svelte:head>
 <form method="POST">
 	<h1>Image Detection
@@ -63,9 +73,13 @@
 			<!-- {#if blurred} -->
 				<!-- <img class="dropped" src={result} alt="wait or try again" /> -->
 			<!-- {:else} -->
-				<div class="logo"> 
-					Result
-				</div>
+			<p class="landmarks" style="font-size:20px">&#128065; Left eye {'{'} x: {result.leftEye.x}, y: {result.leftEye.y} {'}'} </p>
+			<p class="landmarks" style="font-size:20px" > &#128065; Right eye {'{'} x: {result.rightEye.x}, y: {result.rightEye.y} {'}'} </p>
+
+			<p class="landmarks" style="font-size:20px">&#128067; Nose tip {'{'} x: {result.noseTip.x}, y: {result.noseTip.y} {'}'}  </p>
+
+			<p class="landmarks" style="font-size:20px">&#128068; Left mouth corner tip {'{'} x: {result.leftMouthCorner.x}, y: {result.leftMouthCorner.y} {'}'}  </p>
+			<p class="landmarks" style="font-size:20px">&#128068; Right mouth corner tip {'{'} x: {result.rightMouthCorner.x}, y: {result.rightMouthCorner.y} {'}'} </p>
 			<!-- {/if} -->
 		</div>
 
@@ -74,6 +88,12 @@
 
 
 <style>
+
+.landmarks {
+	position: relative;
+	top: 2em;
+	left: 2em;
+}
 
 .grid-containers-images {
 	display: grid;

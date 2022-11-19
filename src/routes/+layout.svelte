@@ -2,11 +2,29 @@
 	import './styles.css';
 	import Header from './Header.svelte';
 	import github from '$lib/images/github.svg';
+	import { onMount } from 'svelte';
+	import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
+	import { app } from '$lib/firebase/client';
+	import { goto } from '$app/navigation';
+
+	let user : User | null
+
+	onMount(async () => {
+		const auth = getAuth(app)
+		onAuthStateChanged(auth, (newUser) => {
+			user = newUser
+			if(!user) {
+        		goto("/auth/signin");
+			}
+		})
+	})
+
 </script>
 
 <div class="app">
-	<Header />
-
+	{#if user}
+		<Header />
+	{/if}
 	<main>
 		<slot />
 	</main>
