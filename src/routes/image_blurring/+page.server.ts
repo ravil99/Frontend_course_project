@@ -24,7 +24,7 @@ export const actions: Actions = {
       method: 'POST',
       body: JSON.stringify(bodyinit),
       headers: {
-        'Authorization': SECTRET_API_KEY,
+        'Authorization': 'Bearer 6383c985270f2c0b45fb6185d7ba7815',
         'Content-Type': 'application/json'
       }
     });
