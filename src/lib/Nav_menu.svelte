@@ -67,13 +67,6 @@
 					<i class="bx bx-wink-smile" />Image detection
 				</a>
 			</li>
-			<!-- Sverdle -->
-			<li class="nav__item">
-				<a href="/sverdle" class="nav__link" on:click={() => (menu = !menu)}>
-					<i class="bx bx-wink-smile" />Sverdle
-				</a>
-			</li>
-			<!-- Aigerim's parts will be included, when they will be ready-->
 
 		</ul>
 	</div>

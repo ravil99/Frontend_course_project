@@ -24,15 +24,16 @@
 
 		};
 	} 
-	let leftEye: any
+	// let leftEye: any
 	try {
-		if(data.response.faces[0].hasOwnProperty("landmarks")){
-			const {landmarks} = data.response.faces[0];
-			console.log(landmarks);
-			result = landmarks
-			leftEye = result.leftEye
-		}else{
-			alert("Try again!");
+		if(data.hasOwnProperty("response")){
+			if(data.response.hasOwnProperty("faces")){
+				if(data.response.faces[0].hasOwnProperty("landmarks")){
+					const {landmarks} = data.response.faces[0];
+					// console.log(landmarks);
+					result = landmarks
+				}
+			}
 		}
 	} catch (err) {
 		console.log(err)
@@ -70,7 +71,7 @@
 		<input style="display:none" name="orgimg" value={dropped}>
 
 		<div class="result">
-			<!-- {#if blurred} -->
+			{#if result}
 				<!-- <img class="dropped" src={result} alt="wait or try again" /> -->
 			<!-- {:else} -->
 			<p class="landmarks" style="font-size:20px">&#128065; Left eye {'{'} x: {result.leftEye.x}, y: {result.leftEye.y} {'}'} </p>
@@ -80,7 +81,7 @@
 
 			<p class="landmarks" style="font-size:20px">&#128068; Left mouth corner tip {'{'} x: {result.leftMouthCorner.x}, y: {result.leftMouthCorner.y} {'}'}  </p>
 			<p class="landmarks" style="font-size:20px">&#128068; Right mouth corner tip {'{'} x: {result.rightMouthCorner.x}, y: {result.rightMouthCorner.y} {'}'} </p>
-			<!-- {/if} -->
+			{/if}
 		</div>
 
 	</div>

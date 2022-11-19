@@ -24,7 +24,7 @@
 			const {response} = data;
 			if(response.hasOwnProperty("blurred")) {
 				result = response.blurred;
-				console.log(result);
+				// console.log(result);
 			}else{
 				alert("Try again!");
 			}
