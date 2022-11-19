@@ -33,7 +33,7 @@
 		<p class="adress">Adress</p>
 
 		<div class="corner">
-			<a href="https://github.com/ravil99/Frontend_course_project">
+			<a href="https://github.com/aigerimu/Frontend_course_project">
 				<img src={github} alt="GitHub" />
 			</a>
 		</div>

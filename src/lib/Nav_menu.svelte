@@ -3,6 +3,8 @@
 	import { onMount } from "svelte";
 	import { app } from "./firebase/client";
 
+	// import { page } from '$app/stores';
+	import { base } from '$app/paths';
 	let menu: boolean = false;
 	let user: User | null
 
@@ -33,21 +35,21 @@
 			{/if}
 
 			<li class="nav__item">
-				<a href="/" class="nav__link active-link" on:click={() => (menu = !menu)}>
+				<a href="{base}/" class="nav__link active-link" on:click={() => (menu = !menu)}>
 					<i class="bx bx-home-alt-2 nav___icon" />Home
 				</a>
 			</li>
 
 			<!-- Text analysis-->
 			<li class="nav__item">
-				<a href="/text_analysis" class="nav__link" on:click={() => (menu = !menu)}>
+				<a href="{base}/text_analysis" class="nav__link" on:click={() => (menu = !menu)}>
 					<i class="bx bx-text" />Text analysis
 				</a>
 			</li>
 
 			<!-- Question answerer-->
 			<li class="nav__item">
-				<a href="/question_answerer" class="nav__link" on:click={() => (menu = !menu)}>
+				<a href="{base}/question_answerer" class="nav__link" on:click={() => (menu = !menu)}>
 					<i class="bx bx-question-mark" />Question answerer
 				</a>
 			</li>
@@ -71,6 +73,8 @@
 					<i class="bx bx-wink-smile" />Sverdle
 				</a>
 			</li>
+			<!-- Aigerim's parts will be included, when they will be ready-->
+
 		</ul>
 	</div>
 
