@@ -10,7 +10,8 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"test": "vitest run src",
-		"test:watch": "vitest src"
+		"test:watch": "vitest src",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
@@ -42,7 +43,8 @@
 		"typescript": "^4.7.4",
 		"vite": "^3.2.4",
 		"vitest": "^0.25.2",
-		"vitest-svelte-kit": "^0.0.7"
+		"vitest-svelte-kit": "^0.0.7",
+		"husky": "^8.0.0"
 	},
 	"type": "module",
 	"dependencies": {
