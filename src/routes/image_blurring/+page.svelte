@@ -20,13 +20,15 @@
 		};
 	}
 	try {
-		if(data.hasOwnProperty("response")) {
-			const {response} = data;
-			if(response.hasOwnProperty("blurred")) {
-				result = response.blurred;
-				// console.log(result);
-			}else{
-				alert("Try again!");
+		if(data){
+			if(data.hasOwnProperty("response")) {
+				const {response} = data;
+				if(response.hasOwnProperty("blurred")) {
+					result = response.blurred;
+					// console.log(result);
+				}else{
+					alert("Try again!");
+				}
 			}
 		}
 	} catch(err) {

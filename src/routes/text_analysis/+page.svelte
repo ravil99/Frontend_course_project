@@ -11,15 +11,17 @@
 	let result_keywords: string;
 	export let data: PageData;
 	try{
-		if(data.hasOwnProperty("response")){
-			const {response} = data;
-			if(response.hasOwnProperty("document")){
-				result_language = response.document.language;
-				result_keywords = response.document.keywords;
-				console.log(response);
-				console.log(response.document);
-			}else{
-				alert("Try again!");
+		if(data) {
+			if(data.hasOwnProperty("response")){
+				const {response} = data;
+				if(response.hasOwnProperty("document")){
+					result_language = response.document.language;
+					result_keywords = response.document.keywords;
+					console.log(response);
+					console.log(response.document);
+				}else{
+					alert("Try again!");
+				}
 			}
 		}
 		else{

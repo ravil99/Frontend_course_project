@@ -8,14 +8,16 @@
 	let result_keywords: string;
 	export let data: PageData;
 	try{
-		if(data.hasOwnProperty("response")){
-			const {response} = data;
-			if(response.hasOwnProperty("document")){
-				answer = response.document.answer.answer;
-				console.log(response);
-				console.log(response.document);
-			}else{
-				alert("Try again!");
+		if(data) {
+			if(data.hasOwnProperty("response")){
+				const {response} = data;
+				if(response.hasOwnProperty("document")){
+					answer = response.document.answer.answer;
+					console.log(response);
+					console.log(response.document);
+				}else{
+					alert("Try again!");
+				}
 			}
 		}
 		else{

@@ -26,12 +26,14 @@
 	} 
 	// let leftEye: any
 	try {
-		if(data.hasOwnProperty("response")){
-			if(data.response.hasOwnProperty("faces")){
-				if(data.response.faces[0].hasOwnProperty("landmarks")){
-					const {landmarks} = data.response.faces[0];
-					// console.log(landmarks);
-					result = landmarks
+		if(data){
+			if(data.hasOwnProperty("response")){
+				if(data.response.hasOwnProperty("faces")){
+					if(data.response.faces[0].hasOwnProperty("landmarks")){
+						const {landmarks} = data.response.faces[0];
+						// console.log(landmarks);
+						result = landmarks
+					}
 				}
 			}
 		}
