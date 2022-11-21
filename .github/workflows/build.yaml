@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+      - image-process
+      - text_pages
+      - layout+infrastructure
 
 jobs:
   build-and-deploy:
