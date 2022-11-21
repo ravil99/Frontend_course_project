@@ -14,9 +14,9 @@ const config = {
 
 		// "paths" are needed only for correct Github Pages build
 
-		paths: {
-			base: dev ? '' : '/Frontend_course_project',
-		},
+		// paths: {
+		// 	base: dev ? '' : '/Frontend_course_project',
+		// },
 	},
 };
 
