@@ -1,4 +1,8 @@
 import adapter from '@sveltejs/adapter-node';
+
+// import adapter from '@sveltejs/adapter-static'  is needed for
+// Github pages, but now it doesn't work
+
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -14,9 +18,9 @@ const config = {
 
 		// "paths" are needed only for correct Github Pages build
 
-		paths: {
-			base: dev ? '' : '/Frontend_course_project',
-		},
+		// paths: {
+		// 	base: dev ? '' : '/Frontend_course_project',
+		// },
 	},
 };
 

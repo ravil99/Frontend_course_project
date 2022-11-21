@@ -1,9 +1,3 @@
-<script>
-	import Ravil from '$lib/images/ravil.jpg';
-	import Aigerim from '$lib/images/aigerim.jpg';
-	import Guzel from '$lib/images/guzel.jpg';
-</script>
-
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
@@ -19,7 +13,7 @@
 <div class="row">
 	<div class="column">
 		<div class="card">
-			<img src={Ravil} alt="Ravil" style="width:100%;height:380px" />
+			<img src="src/lib/images/ravil.jpg" alt="Ravil" style="width:100%;height:380px" />
 			<div class="container">
 				<h2>Ravil</h2>
 				<p class="title">CEO & Founder</p>
@@ -31,7 +25,7 @@
 
 	<div class="column">
 		<div class="card">
-			<img src={Aigerim} alt="Aigerim" style="width:100%;height:380px" />
+			<img src="/src/lib/images/aigerim.jpg" alt="Aigerim" style="width:100%;height:380px" />
 			<div class="container">
 				<h2>Aigerim</h2>
 				<p class="title">Art Director</p>
@@ -43,7 +37,7 @@
 
 	<div class="column">
 		<div class="card">
-			<img src={Guzel} alt="Guzel" style="width:100%;height:380px" />
+			<img src="src/lib/images/guzel.jpg" alt="Guzel" style="width:100%;height:380px" />
 			<div class="container">
 				<h2>Guzel</h2>
 				<p class="title">Designer</p>
