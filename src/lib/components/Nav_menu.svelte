@@ -56,19 +56,29 @@
 			<!-- Image blurring-->
 			<li class="nav__item">
 				<a href="/image_blurring" class="nav__link" on:click={() => (menu = !menu)}>
-					<i class="bx bx-wink-smile" /> Image blurring
+					<i class="bx bxs-image" /> Image blurring
 				</a>
 			</li>
 
 			<!-- Image detection-->
 			<li class="nav__item">
 				<a href="/image_detection" class="nav__link" on:click={() => (menu = !menu)}>
-					<i class="bx bx-wink-smile" />Image detection
+					<i class="bx bxs-image-add" />Image detection
+				</a>
+			</li>
+
+			<!-- About-->
+			<li class="nav__item">
+				<a href="/about" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-child" />About
 				</a>
 			</li>
 		</ul>
 	</div>
 
+	<!-- This can be changed either:
+		* Changing ESlint config
+		* adding on:keydown/keyup/keypress event-->
 	<div class="nav__toggle" on:click={() => (menu = !menu)}>
 		<i class="bx bx-grid-alt" />
 	</div>
