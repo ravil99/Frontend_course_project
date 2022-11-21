@@ -5,5 +5,5 @@ import Page__SvelteComponent_ from "src/routes/about/+page.svelte";
 test("should render", () => {
   const results = render(Page__SvelteComponent_);
 
-  expect(() => results.getByText("About this app")).not.toThrow();
+  expect(() => results.getByText("About Dreamteam")).not.toThrow();
 });

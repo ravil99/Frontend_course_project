@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { getAuth, onAuthStateChanged, type User } from "firebase/auth";
-	import { onMount } from "svelte";
-	import { app } from "./firebase/client";
+	import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
+	import { onMount } from 'svelte';
+	import { app } from '../firebase/client';
 
 	// import { page } from '$app/stores';
 	import { base } from '$app/paths';
 	let menu: boolean = false;
-	let user: User | null
+	let user: User | null;
 
 	onMount(async () => {
 		const auth = getAuth(app);
@@ -15,7 +15,6 @@
 			user = newUser;
 		});
 	});
-	
 </script>
 
 <!-- Navigation element -->
@@ -57,21 +56,29 @@
 			<!-- Image blurring-->
 			<li class="nav__item">
 				<a href="/image_blurring" class="nav__link" on:click={() => (menu = !menu)}>
-					<i class="bx bx-wink-smile" /> Image blurring
+					<i class="bx bxs-image" /> Image blurring
 				</a>
 			</li>
 
 			<!-- Image detection-->
 			<li class="nav__item">
 				<a href="/image_detection" class="nav__link" on:click={() => (menu = !menu)}>
-					<i class="bx bx-wink-smile" />Image detection
+					<i class="bx bxs-image-add" />Image detection
 				</a>
 			</li>
 
+			<!-- About-->
+			<li class="nav__item">
+				<a href="/about" class="nav__link" on:click={() => (menu = !menu)}>
+					<i class="bx bx-child" />About
+				</a>
+			</li>
 		</ul>
 	</div>
 
-	<!-- Can be resolved by changing EsLint configurations-->
+	<!-- This can be changed either:
+		* Changing ESlint config
+		* adding on:keydown/keyup/keypress event-->
 	<div class="nav__toggle" on:click={() => (menu = !menu)}>
 		<i class="bx bx-grid-alt" />
 	</div>

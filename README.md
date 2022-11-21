@@ -1,38 +1,25 @@
-# create-svelte
+# "MindHelp" application
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This SvelteKit app was developed as a course project for **Frontend Web Development** course in Innopolis University. Fall 2022.
 
-## Creating a project
+## Desctiption
 
-If you're seeing this, you've probably already done this step. Congrats!
+This Single Page Application fetches free ML-APIs for text (text sentiment analysis, question answerer) and image (image blurring, object detection) processing. Only authorized user can get access for the application. Authentification was implemented via Firebase.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## How to run
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+### Development version
 
-## Developing
+`git clone * `
+`npm install`
+`npm run dev`
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Production version
 
-```bash
-npm run dev
+Unfortunately, we experienced certain problems during Github Pages deployment: conflict of API fetching part and **adapter-static**. Development version works with **adapter-node/auto**, but such version can't be hosted on Pages. This might be fixed in the future.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Team and contirubtions
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- **Ravil Akhmetzhanov** (https://github.com/ravil99) - Infrastructure (SvelteKit, Github Actions, ESLint, Prettier), Layout and Home page.
+- **Aigerim Gilmanova** (https://github.com/aigerimu) - Image blurring and detection pages, Husky, Authentification using Firebase.
+- **Guzel Safiullina** (https://github.com/guzelsafiullina) - Testing, text analysis, question answerer, about pages.

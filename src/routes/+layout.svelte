@@ -7,18 +7,17 @@
 	import { app } from '$lib/firebase/client';
 	import { goto } from '$app/navigation';
 
-	let user : User | null
+	let user: User | null;
 
 	onMount(async () => {
-		const auth = getAuth(app)
+		const auth = getAuth(app);
 		onAuthStateChanged(auth, (newUser) => {
-			user = newUser
-			if(!user) {
-        		goto("/auth/signin");
+			user = newUser;
+			if (!user) {
+				goto('/auth/signin');
 			}
-		})
-	})
-
+		});
+	});
 </script>
 
 <div class="app">
@@ -30,17 +29,33 @@
 	</main>
 
 	<footer>
-		<p class="adress">Adress</p>
+		<ul class="adress">
+			<li>1, Universitetskaya Str.,</li>
+			<li>Innopolis, 420500, Russia</li>
+			<li>
+				<a href="https://innopolis.university/en/"> Innopolis University </a>
+			</li>
+		</ul>
 
-		<div class="corner">
-			<a href="https://github.com/aigerimu/Frontend_course_project">
-				<img src={github} alt="GitHub" />
-			</a>
-		</div>
+		<ul class="corner">
+			<li>Source code</li>
+			<li>
+				<a href="https://github.com/aigerimu/Frontend_course_project">
+					<img src={github} alt="GitHub" />
+				</a>
+			</li>
+		</ul>
 	</footer>
 </div>
 
 <style>
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		line-height: 200%;
+	}
+
 	.app {
 		display: flex;
 		flex-direction: column;
@@ -48,8 +63,9 @@
 	}
 
 	.corner {
-		width: 3em;
-		height: 3em;
+		font-size: var(--h2-font-size);
+		margin-left: var(--mb-1);
+		margin-right: var(--mb-1);
 	}
 
 	.corner a {
@@ -67,6 +83,8 @@
 	}
 
 	.adress {
+		margin-left: var(--mb-1);
+		margin-right: var(--mb-1);
 		font-size: var(--h2-font-size);
 	}
 
