@@ -1,14 +1,11 @@
 <script lang="ts">
-	import logo from '$lib/images/svelte-logo.svg';
+	import logo from '$lib/images/AI_icon.png';
 	import NavMenu from '$lib/Nav_menu.svelte';
-	
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
+		<img src={logo} alt="MindHelp_logo" />
 	</div>
 
 	<div class="proj__name">
@@ -27,27 +24,19 @@
 		justify-content: space-between;
 	}
 
+
 	.corner {
 		width: 3em;
 		height: 3em;
-	}
-
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
+		padding: 1rem 0rem;
 	}
 
 	.corner img {
-		width: 2em;
-		height: 2em;
+		width: 7em;
+		height: 7em;
 		object-fit: contain;
-	}
-
-	a:hover {
-		color: var(--color-theme-1);
+		margin-left: var(--mb-1);
+		margin-right: var(--mb-1);
 	}
 
 	.proj__name {
