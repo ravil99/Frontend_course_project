@@ -18,7 +18,7 @@ This Single Page Application fetches free ML-APIs for text (text sentiment analy
 
 Unfortunately, we experienced certain problems during Github Pages deployment: conflict of API fetching part and **adapter-static**. Development version works with **adapter-node/auto**, but such version can't be hosted on Pages. This might be fixed in the future.
 
-## Team and contirubtions
+## Team and contributions
 
 - **Ravil Akhmetzhanov** (https://github.com/ravil99) - Infrastructure (SvelteKit, Github Actions, ESLint, Prettier), Layout and Home page.
 - **Aigerim Gilmanova** (https://github.com/aigerimu) - Image blurring and detection pages, Husky, Authentification using Firebase.
