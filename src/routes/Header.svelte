@@ -1,6 +1,6 @@
 <script lang="ts">
 	import logo from '$lib/images/AI_icon.png';
-	import NavMenu from '$lib/Nav_menu.svelte';
+	import NavMenu from '$lib/components/Nav_menu.svelte';
 </script>
 
 <header>
@@ -12,9 +12,6 @@
 		<p class="name__data">MindHelp</p>
 	</div>
 
-	<!-- Improve visual by adding styles -->
-
-	<!-- Add Props and/or Events -->
 	<NavMenu />
 </header>
 
@@ -23,7 +20,6 @@
 		display: flex;
 		justify-content: space-between;
 	}
-
 
 	.corner {
 		width: 3em;

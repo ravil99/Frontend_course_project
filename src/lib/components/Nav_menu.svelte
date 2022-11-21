@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { getAuth, onAuthStateChanged, type User } from "firebase/auth";
-	import { onMount } from "svelte";
-	import { app } from "./firebase/client";
+	import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
+	import { onMount } from 'svelte';
+	import { app } from '../firebase/client';
 
 	// import { page } from '$app/stores';
 	import { base } from '$app/paths';
 	let menu: boolean = false;
-	let user: User | null
+	let user: User | null;
 
 	onMount(async () => {
 		const auth = getAuth(app);
@@ -15,7 +15,6 @@
 			user = newUser;
 		});
 	});
-	
 </script>
 
 <!-- Navigation element -->
@@ -67,11 +66,9 @@
 					<i class="bx bx-wink-smile" />Image detection
 				</a>
 			</li>
-
 		</ul>
 	</div>
 
-	<!-- Can be resolved by changing EsLint configurations-->
 	<div class="nav__toggle" on:click={() => (menu = !menu)}>
 		<i class="bx bx-grid-alt" />
 	</div>
