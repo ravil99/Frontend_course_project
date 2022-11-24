@@ -11,7 +11,9 @@ This Single Page Application fetches free ML-APIs for text (text sentiment analy
 ### Development version
 
 `git clone * `
+
 `npm install`
+
 `npm run dev`
 
 ### Production version
