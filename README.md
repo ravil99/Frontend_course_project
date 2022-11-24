@@ -16,7 +16,9 @@ This Single Page Application fetches free ML-APIs for text (text sentiment analy
 
 ### Production version
 
-Unfortunately, we experienced certain problems during Github Pages deployment: conflict of API fetching part and **adapter-static**. Development version works with **adapter-node/auto**, but such version can't be hosted on Pages. This might be fixed in the future.
+Unfortunately, we experienced certain problems during Github Pages deployment: conflict of API fetching part and **adapter-static**.Development version works with **adapter-node/auto**, but such version can't be hosted on Pages. This might be fixed in the future.
+
+Right now, Pages link leads to an early version of this web application.
 
 ## Team and contributions
 
